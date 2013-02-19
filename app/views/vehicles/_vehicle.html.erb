@@ -1,0 +1,34 @@
+<div class="indexed-car">
+  <div class="left-box">
+    <%= link_to(image_tag("#{vehicle.images}", :size => "140x140", :alt => "#{vehicle.make} #{vehicle.model}", :class => 'img-polaroid'), dealer_vehicle_path(vehicle.dealer_id, vehicle))%>
+    <p><strong>
+      <% if vehicle.price == 0 %>
+        Call for price
+      <% else %>
+        $<%= number_with_delimiter(vehicle.price, :delimiter => ',') %>
+    <% end %>
+  <br />
+  <% if dealer_signed_in? %>
+    <% if current_dealer.id == vehicle.dealer_id %>
+      <small> Impr: <%= impressions_for_car(vehicle.vehicle_statistic) %> Clicks: <%= clicks_for_car(vehicle.vehicle_statistic) %></small>
+    <% end %>
+  <% end %>
+  </strong></p>
+</div><!-- left-box -->
+<div class="vehicle-summary">
+  <h3>
+    <%= link_to "#{vehicle.year} #{vehicle.make.titleize} #{vehicle.model.titleize}", dealer_vehicle_path(vehicle.dealer_id, vehicle) %>
+  </h3>
+  <p><%= vehicle.description.cap_sentences %>
+<br />
+<br />
+<%= link_to '<button class="btn btn-mini btn-primary" type="button" >Learn More</button>'.html_safe, dealer_vehicle_path(vehicle.dealer_id, vehicle) %>
+</p>
+  </div><!-- vehicle-summary -->
+</div><!-- indexed-car -->
+<div class="index-buffer"></div>
+<div class="spacer"></div>
+<hr>
+
+
+

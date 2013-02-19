@@ -1,0 +1,116 @@
+#cc-wrapper{margin-left:55px;}
+.center-the-form {margin-top:-110px; margin-left:430px; width:250px;}
+.text-dealers-button {margin-left:10px;width:220px;}
+.logo {display:block;margin-left:100px; height:120px; width:250px; background-image:url('./logo.png');text-indent:-9999px;}
+#row-wrapper{margin-left:145px;}
+.span3-buffer{ width:25px;}
+#footer-right{float:right;}
+.left-check {float:left; }
+.right-check{margin-left:30px;}
+#label-spacer{width:1px;}
+
+.thank-you {
+  float:left;
+  margin-top:30px; 
+  width:400px;
+  margin-bottom:300px;
+  padding:10px;
+  border-right:thin solid #333333;
+}
+
+.continue-search{
+  float:right;
+  padding:10px;
+  margin-top:30px; 
+  width:400px;
+  margin-bottom:300px;
+  margin-right:30px;
+}
+
+.center-the-or{
+  margin-top:10px;
+  margin-left:175px;
+}
+
+.activate-account{
+  padding-left:10px;
+  width:940px;
+}
+
+
+.make-a-payment{
+  margin-left:250px;
+  margin-top:100px;
+  margin-bottom:200px;
+  width:500px;
+  text-align:center;
+}
+
+.dealer-stats {
+  color: #000;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  padding:8px;
+  border-radius:3px;
+  height:40px;
+}
+
+
+.year-spans {width:108px;}
+.index-buffer {clear:both; margin-top:25px;}
+#articles-wrap {margin-left:30px;}
+#articles-wrap .span3 {margin-right:40px; margin-bottom:30px;}
+.add-article {width: 900px;}
+
+/* Vehicle Index */
+.btn-group{float:left;}
+
+/*wrapper for vehicel index page*/
+#vehicle-index-wrapper{margin-left:150px;}
+/*#vehicle-index-wrapper hr {width:500px;}*/
+
+/*block for each car*/
+.indexed-car{width:600px;margin-bottom:20px;}
+
+.spacer {clear:both;width:1px;height:1px;}
+
+.left-box{float:left;width:150px;margin-top:5px;text-align:center;}
+.left-box p {margin-top:10px;}
+
+/*index car summary*/
+.vehicle-summary{float:right;width:400px; margin-top:-15px;}
+.vehicle-summary h3 {margin-left:-10px; width:500px;}
+.vehicle-summary h3 small {margin-left:10px;}
+.vehicle-summary a {color: #333333; text-decoration:none; margin-left:10px;}
+.vehicle-summary p a {color: #08c;}
+.btn {margin-left:-10px;}
+
+/*show car*/
+.big-image {float:left; width:300px;}
+.big-image h3  {float:left;margin-left:10px;}
+.big-image p  {float:right; margin-top:17px;}
+.big-image address {font-size:16px;text-align:left;margin-left:10px;}
+.table-striped {min-width:200px; width:auto;}
+
+.vehicle-features {float:left; margin-left:100px; margin-top:-20px;}
+.align-btn {margin-left:10px;}
+.individual-summary {width:300px;}
+
+#dealer-logo {float:right; height: 75px; width:175px; margin-right:130px; }
+
+.left-block {float:left; width:310px;}
+.right-block {float:left; margin-left:90px; width:300px;}
+.big-block {margin-top:20px;width:700px;}
+
+/*email dealers*/
+.contact-header {margin-left:250px;}
+.email-dealer-form {margin-left:250px;padding:20px;width:290px;background-color:#262626;border-radius:5px;}
+.email-dealer-form label {color:#FFFFFF; font-size:16px;}
+.email-dealer-form small {color:#FFFFFF;}
+.email-dealer-button {margin-left: 10px; width:285px;}
+
+
+.sign-up-form {margin-left:250px;padding:20px;width:290px;background-color:#262626;border-radius:5px;}
+.sign-up-form label {color:#FFFFFF;}
+.sign-up-form small {color:#FFFFFF;}
+.email-dealer-button {width:220px;}

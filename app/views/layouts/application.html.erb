@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="description" content= "<%= description %>" />
+    <meta name="keywords" content= "<%= keywords %>" />
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render './shared/analytics' %>
+  </head>
+  <body>
+    <%= render './shared/authentication' %>
+    <div class="container">
+      <%if admin_signed_in? %>
+        <p>
+        <button class="btn"><%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></button>
+        <button class="btn"><%= link_to "Add article", '/car-articles/new/' %></button>
+        <button class="btn"><%= link_to "Article count", '/how-many-articles/' %></button>
+        </p>
+      <% end %>
+      <br />
+      <br />
+      <br />
+      <%= render './shared/alerts' %>
+      <%= yield %>
+      <%= render './shared/footer' %>
+    </div><!-- container -->
+  </body>
+</html>

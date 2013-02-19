@@ -1,0 +1,36 @@
+<div class="car-title">
+  <h1>
+    <%= @vehicle.year %>
+    <%= @vehicle.make.titleize %>
+    <%= @vehicle.model.titleize %>
+  </h1>
+</div>
+<br />
+<br />
+<div class="big-image">
+  <img src=<%= @vehicle.images %> class="img-polaroid" height="300px" width="300px" >
+  <h3>
+    <% if @vehicle.price ==  0 %>
+      Call for price
+    <% else %>
+      $<%= number_with_delimiter(@vehicle.price, :delimiter => ',') %>
+  <% end %>
+</h3>
+<p class="lead"><%= @vehicle.dealer.phone.to_s.phone_numberize %></p>
+<div class="spacer"></div>
+<address>
+  <strong><%= @vehicle.dealer.dealership %></strong><br>
+  <%= @vehicle.dealer.address %><br>
+  <%= @vehicle.dealer.city %>,
+  <%= @vehicle.dealer.state %>
+  <%= @vehicle.dealer.zip %><br>
+</address>
+<address>
+  <%= link_to "Email Seller", email_dealer_path(:vid => @vehicle.id) %>
+
+  <!--<strong>Email seller:</strong><br>
+  <a href="mailto:<%= @vehicle.dealer.email %>">
+    <%= @vehicle.dealer.email %>
+  </a>-->
+</address>
+</div>

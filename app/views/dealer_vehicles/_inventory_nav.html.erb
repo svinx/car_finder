@@ -1,0 +1,50 @@
+<% if dealer_signed_in? %>
+  <div class ="dealer-stats">
+    <p class="lead">
+    Your Total Stats - Impressions: <%= get_total_impressions %>
+    Views: <%= get_total_views %>
+    </p>
+  </div>
+  <div class="clearfix"></div>
+<% end %>
+<p class="lead">Sort By:</p>
+<div id="inventory-nav">
+  <div class="btn-group">
+    <button class="btn btn-small">Make</button>
+    <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <% @makes.each do |make| %>
+        <li><%= link_to "#{make.capitalize}", vehicles_search_path(:make => make) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-small">Price</button>
+    <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Below 5,000", vehicles_search_path(:price => "1") %></li>
+      <li><%= link_to "5,000 - 10,000", vehicles_search_path(:price => "2") %></li>
+      <li><%= link_to "10,000 - 15,000", vehicles_search_path(:price => "3") %></li>
+      <li><%= link_to "15,000 - 20,000", vehicles_search_path(:price => "4") %></li>
+      <li><%= link_to "Over 20,000", vehicles_search_path(:price => "5") %></li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-small">Mileage</button>
+    <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Low", vehicles_search_path(:miles => "low") %></li>
+      <li><%= link_to "Moderate", vehicles_search_path(:miles => "moderate") %></li>
+      <li><%= link_to "High", vehicles_search_path(:miles => "high") %></li>
+    </ul>
+  </div>
+
+</div><!-- inventory-nav -->
+<div class="spacer"></div>
+<hr>

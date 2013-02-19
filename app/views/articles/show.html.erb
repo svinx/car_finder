@@ -1,0 +1,8 @@
+<h1><%= markdown(@article.topic) %></h1>
+<hr>
+<p><%= markdown(@article.content) %></p>
+<%if admin_signed_in? %>
+  <div class="btn">
+    <%= link_to "Edit Article", edit_article_path(@article) %>
+  </div>
+<% end %> 

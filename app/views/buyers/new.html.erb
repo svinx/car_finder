@@ -1,0 +1,86 @@
+<div id="cc-wrapper" >
+  <div class="logo">
+    <p>Car Compass - Car Search Redefined</p>
+  </div>
+  <div class="center-the-form">
+    <legend>Find Your Next Car</legend>
+    <%= form_for @buyer do |f| %>
+
+      <%= render 'shared/error_messages', :object => f.object %> 
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, :placeholder => "123-456-7890" %><br />
+      <%= f.label :make %>
+      <%= f.text_field :make, :placeholder => "Ford, Chevy ..." %><br />
+      <%= f.label :model %>
+      <%= f.text_field :model, :placeholder => "Mustang, Volt ..." %><br />
+      <%= f.label :color %>
+      <%= f.text_field :color, :placeholder => "Red, Blue ..." %><br />
+      <%= f.label :miles %>
+      <%= f.select :miles, Buyer::MILES_OPTIONS %><br /> 
+      <%= f.label :year_range %>
+      <%= f.select :low_year, (1990..2012).to_a, {}, {:class => "year-spans"} %> 
+      <%= f.select :high_year, (1990..2012).to_a.reverse, {}, {:class => "year-spans"} %><br /> 
+      <br />
+      <p><%= f.check_box(:contact_me) %>  I want sellers to contact me</p>
+      <br />
+      <div class="text-dealers-button">
+        <%= f.check_box :last_car, :checked => false, :style => 'visibility: hidden' %>
+        <%= f.submit "Find My Car!", :class => "btn btn-large btn-block btn-primary" %>
+      </div>
+    <% end %>
+    <p><small>* We don't share your info unless you tell us to.
+      You will receive a text with sellers
+      who have the car you're looking for.</small></p>
+  </div><!-- center-the-form -->
+  <div class="index-buffer"></div>
+  <div id="row-wrapper">
+    <div class="row">
+      <%= render 'summary' %>
+      <%= render 'privacy' %>
+    </div><!-- row-wrapper -->
+  </div><!-- row -->
+  <br />
+  <br />
+  <h3>How does Car Compass work?</h3>
+  <p>
+  When you submit a form we send an text to all the Utah car dealerships that are part of our trusted network. 
+  We only send them what kind of car you're looking for - none of your personal information. 
+  Dealerships will then respond to Car Compass if they have the vehicle you're looking for or not. 
+  We then text you the information of all the dealerships that said they have the car in stock. It's that simple. 
+  </p>
+  <br />
+  <h3>Does it cost money?</h3>
+  <p>
+  No, Car Compass is a free service to everyone looking for their next car. Search for as many cars as you'd like, 
+  that's what we're here for.
+  </p>
+  <br />
+  <h3>What is Car Compass?</h3>
+  <p>
+  We're glad you asked! Car Compass is a bold, new way to shop for your next car or truck. 
+  Using a realtime communication network we instantly contact Utah new and used car dealerships to see if they have the vehicle you're looking for. 
+  If they do, we instantly send you a text with the dealership's information. 
+  No more looking at a dealership's inventory that's out-of-date or inaccurate. 
+  When you use Car Compass, you're getting the best way to find where the car or truck you want is for sale.
+  </p>
+  <br />
+  <h3>What happens with my info?</h3>
+  <p>
+  We keep your personal information safe and secure. We never share it  with dealerships, unless you tell us to.
+  </p>
+  <br />
+  <h3>What areas do you serve?</h3>
+  <p>
+  We're all about Utah! Our car dealership network serves the the whole state. 
+  Whether you're in Salt Lake, Ogden, Provo, Park City or St. George, you can use our realtime search feature to find the vehicle you're looking for.
+  </p>
+  <br />
+  <h3>What's next?</h3>
+  <p>
+  Our continued effort to make car shopping easier, friendlier, and more enjoyable. 
+  Whether you're looking for new or used vehicles, we're continually working on new tools to help you find the best car! 
+  If you have an idea for something that would make it easier for you to find you're next car, let use know, we would love to hear from you.	
+  </p>
+  <br />
+</div><!-- cc-wrapper -->

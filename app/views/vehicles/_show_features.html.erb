@@ -1,0 +1,83 @@
+<h3>Features</h3>
+<table class="table table-striped table-condensed">
+  <tbody>
+
+    <% if !@vehicle.car_type.nil? %>
+      <% if !@vehicle.car_type.empty? %>
+        <tr>
+          <td><%= @vehicle.car_type.capitalize %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.body.nil? %>
+      <% if !@vehicle.body.empty? %>
+        <tr>
+          <td><%= @vehicle.body.titleize %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.mileage.nil? %>
+      <tr>
+        <td>Miles: <%= number_with_delimiter(@vehicle.mileage, :delimiter => ',') %></td>
+      </tr>
+    <% end %>
+
+    <% if !@vehicle.highway_mpg.nil? %>
+      <tr>
+        <td>MPG Highway: <%= @vehicle.highway_mpg %></td>
+      </tr>
+    <% end %>
+
+    <% if !@vehicle.city_mpg.nil? %>
+      <tr>
+        <td>MPG City: <%= @vehicle.city_mpg %></td>
+      </tr>
+    <% end %>
+
+    <% if !@vehicle.transmission.nil? %>
+      <% if !@vehicle.transmission.empty? %>
+        <tr>
+          <td><%= @vehicle.transmission.capitalize %> Transmission</td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.drivetrain.nil? %>
+      <% if !@vehicle.drivetrain.empty? %>
+        <tr>
+          <td><%= @vehicle.drivetrain.capitalize %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.exterior_color.nil? %>
+      <% if !@vehicle.exterior_color.empty? %>
+        <tr>
+          <td><%= @vehicle.exterior_color.capitalize %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.interior_color.nil? %>
+      <% if !@vehicle.interior_color.empty? %>
+        <tr>
+          <td><%= @vehicle.interior_color.capitalize %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+    <% if !@vehicle.cylinders.nil? %>
+      <tr>
+        <td><%= @vehicle.cylinders %> Cylinders</td>
+      </tr>
+    <% end %>
+
+    <% if !@vehicle.vin.empty? %>
+      <tr>
+        <td>VIN: <%= @vehicle.vin %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

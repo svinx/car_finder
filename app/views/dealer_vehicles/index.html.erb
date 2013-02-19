@@ -1,0 +1,10 @@
+<div id="vehicle-index-wrapper">
+  <div id="dealer-logo">
+    <% unless @vehicles.first.nil? %>
+      <img src=<%= @vehicles.first.dealer.logo %> >
+    <% end %>
+  </div>
+  <%= render 'inventory_nav' %>
+  <%= render @vehicles %>
+  <%= will_paginate @vehicles, :renderer => 'BootstrapPaginationHelper::LinkRenderer' %>
+</div>

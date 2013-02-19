@@ -1,0 +1,16 @@
+<div class="thank-you">
+  <p><h1>Thanks For Asking!</h1> <br />
+  We'll ask local sellers if they have your car in stock<br />
+  You'll receive a text from us with what we find<br /><br/>
+  If you have any questions, please <a href="/contact">let us know</a></p>
+</div>
+<div class="continue-search">
+  <p><h1>Keep Searching...</h1> <br />
+  <%= link_to "See our online inventory", vehicles_path, :class => "btn btn-large btn-block btn-primary" %>
+  <div class="center-the-or">
+    <p class="lead">or</p>
+  </div>
+  <%= link_to "See what comes up with a random search", dealer_vehicle_path(random_vehicle.dealer_id, random_vehicle), :class => "btn btn-large btn-block btn-primary" %>
+  </p>
+</div>
+<div class="clearfix"></div>

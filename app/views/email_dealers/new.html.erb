@@ -1,0 +1,6 @@
+<div class="contact-header">
+  <h2>Contact <%= @vehicle.dealer.dealership %></h2>
+  <p class="lead">about the <%= @vehicle.year %> <%= @vehicle.make.titleize %> <%= @vehicle.model.titleize %></p>
+</div>
+<%= render :partial => 'email_dealer_about_car', :locals => {:email_dealer => EmailDealer.new} %>
+

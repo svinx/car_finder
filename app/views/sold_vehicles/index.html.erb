@@ -1,0 +1,5 @@
+<div id="vehicle-index-wrapper">
+  <%= render 'vehicles/inventory_nav' %>
+  <%= render @vehicles %>
+  <%= will_paginate @vehicles, :renderer => 'BootstrapPaginationHelper::LinkRenderer' %>
+</div>

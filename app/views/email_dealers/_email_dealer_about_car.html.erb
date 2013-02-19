@@ -1,0 +1,28 @@
+<div class="email-dealer-form">
+  <%= form_for email_dealer, :url => email_dealer_path do |form| %>
+    <fieldset class="fields">
+      <p><%= form.label :"first_name*" %>
+      <%= form.text_field :first_name, :class => "input-xlarge" %><br /></p>
+
+      <p><%= form.label :"last_name*" %>
+      <%= form.text_field :last_name, :class => "input-xlarge" %><br /></p>
+
+      <p><%= form.label :"your_email*" %>
+      <%= form.text_field :email, :class => "input-xlarge" %><br /></p>
+
+      <p><%= form.label :"your_question" %>
+      <%= form.text_area :body, :class => "input-xlarge", :rows => 5 %><br /></p>
+
+      <%= hidden_field(:vehicle, :vid, :value => @vehicle.id) %>
+      <%= hidden_field(:email_dealer, :subject, :value => "VIN: #{@vehicle.vin}" ) %>
+
+    </fieldset>
+
+    <fieldset class="actions">
+      <div class="email-dealer-button">
+        <%= form.submit "Send Email", :class => "btn btn-large btn-block btn-primary" %>
+      </div>
+    </fieldset>
+  <% end %>
+  <small>* Indicates required field</small>
+</div>

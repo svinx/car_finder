@@ -1,0 +1,7 @@
+<p>You have published <b><%= @articles.size %> articles</b> to Car Compass</p>
+<p><b>Topics:</b></p>
+<p>
+<% @articles.each do |a| %>
+  <a href="/car-articles/<%= a.permalink %>" ><%= a.topic %></a> <br /> 
+<% end %>
+</p>

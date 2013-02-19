@@ -1,0 +1,30 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Car Compass</a>
+      <form class="navbar-form pull-right">
+        <%= link_to "Random Car", dealer_vehicle_path(random_vehicle.dealer_id, random_vehicle), :class => "btn" %>
+        ""<%= link_to "Browse All Cars", vehicles_path, :class => "btn" %>
+        <%if dealer_signed_in? %>
+          ""<%= link_to "Your Inventory", dealer_inventory_path(session['warden.user.dealer.key'][1].first), :class => "btn btn-primary" %>
+          ""<%= link_to "Settings", edit_dealer_registration_path, :class => "btn btn-primary" %>
+          ""<%= link_to "Sign out", destroy_dealer_session_path, :method => :delete, :class => "btn btn-primary" %>
+        <% end %>
+        <% if admin_signed_in? %>
+          ""<%= link_to "Add Articles", new_article_path,  :class => "btn btn-primary" %>
+          ""<%= link_to "All Articles", all_articles_path, :class => "btn btn-primary" %>
+          ""<%= link_to "Admin Sign Out", destroy_admin_session_path, :method => :delete, :class => "btn btn-primary" %>
+       <% end %>
+      </form>
+    </div>
+  </div>
+  <% if dealer_signed_in? %>
+    <% if dealer_billing_not_current?(session['warden.user.dealer.key'][1].first) %>
+      <div class="container">
+        <div class="activate-account">
+          <%= link_to "Add Billing Info to Activate Your Account", 'https://car-compass.herokuapp.com/charges/new/', :class => "btn btn-large btn-block btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
